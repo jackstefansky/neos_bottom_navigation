@@ -9,11 +9,32 @@ A bottom navigation bar widget that is made to be customized
 ## How to use it?
 	
 ~~~~
-This is a 
-piece of code 
-in a block
+Scaffold(
+      bottomNavigationBar: CustomBottomNavigationBar(
+        items: [
+          CustomBottomNavigationBarItem(
+            icon: Icons.map,
+            title: "Map",
+          ),
+          CustomBottomNavigationBarItem(
+            icon: Icons.near_me,
+            title: "Directions",
+          ),
+          CustomBottomNavigationBarItem(
+            icon: Icons.settings,
+            title: "Settings",
+          ),
+        ],
+      ),
+    );
 ~~~~
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+You can also add a parameter onTap (which returns current index) to control PageController:
+
+~~~~
+onTap: (index) {
+          _pageController.animateToPage(index,
+              curve: Curves.fastLinearToSlowEaseIn,
+              duration: Duration(milliseconds: 600));
+        },
+~~~~
