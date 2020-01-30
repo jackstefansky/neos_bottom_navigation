@@ -1,8 +1,8 @@
 name: custom_bottom_navigation_bar
-description: Customable Bottom Navigation Bar widget
+description: A bottom navigation bar widget that is made to be customized
 version: 0.0.1
-author:
-homepage:
+author: Jack Stefansky<stefphan01@gmail.com>
+homepage: https://jackstefansky.github.io
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
