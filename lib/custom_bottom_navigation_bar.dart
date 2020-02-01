@@ -1,3 +1,8 @@
+/*
+Initial development sponsored by Zaynin Pty (Ltd)
+*/
+
+
 library custom_bottom_navigation_bar;
 
 import 'package:custom_bottom_navigation_bar/custom_bottom_navigation_bar_item.dart';

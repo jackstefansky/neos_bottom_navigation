@@ -38,3 +38,5 @@ onTap: (index) {
               duration: Duration(milliseconds: 600));
         },
 ~~~~
+
+Initial development sponsored by Zaynin Pty (Ltd)

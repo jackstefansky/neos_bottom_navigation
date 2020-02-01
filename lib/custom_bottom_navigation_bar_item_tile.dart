@@ -1,3 +1,7 @@
+/*
+Initial development sponsored by Zaynin Pty (Ltd)
+*/
+
 import 'package:custom_bottom_navigation_bar/custom_bottom_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
 
@@ -44,6 +48,13 @@ class _CustomBottomNavigationBarItemTileState
   }
 
   Widget _buildItem() {
+    Icon icon;
+
+    icon = Icon(widget.item.icon.icon,
+        color: widget.currentIndex == widget.index
+            ? widget.selectedItemColor
+            : widget.unselectedItemColor);
+
     return Stack(
       children: <Widget>[
         Container(
@@ -55,29 +66,23 @@ class _CustomBottomNavigationBarItemTileState
                 ? Alignment.topCenter
                 : Alignment.bottomCenter,
             child: AnimatedContainer(
-              padding: EdgeInsets.all(15.0),
-              curve: Curves.easeOut,
-              duration: Duration(milliseconds: 300),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(100.0),
+                padding: EdgeInsets.all(15.0),
+                curve: Curves.easeOut,
+                duration: Duration(milliseconds: 300),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(100.0),
+                  ),
+                  color: widget.currentIndex == widget.index
+                      ? widget.itemBackgroudnColor
+                      : widget.backgroundColor,
+                  border: Border.all(
+                      color: widget.currentIndex == widget.index
+                          ? widget.itemOutlineColor
+                          : widget.itemOutlineColor.withOpacity(0.0),
+                      width: 3.5),
                 ),
-                color: widget.currentIndex == widget.index
-                    ? widget.itemBackgroudnColor
-                    : widget.backgroundColor,
-                border: Border.all(
-                    color: widget.currentIndex == widget.index
-                        ? widget.itemOutlineColor
-                        : widget.itemOutlineColor.withOpacity(0.0),
-                    width: 3.5),
-              ),
-              child: Icon(
-                widget.item.icon,
-                color: widget.currentIndex == widget.index
-                    ? widget.selectedItemColor
-                    : widget.unselectedItemColor,
-              ),
-            ),
+                child: icon),
           ),
         ),
         AnimatedOpacity(

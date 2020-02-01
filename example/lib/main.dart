@@ -1,3 +1,7 @@
+/*
+Initial development sponsored by Zaynin Pty (Ltd)
+*/
+
 import 'package:custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:custom_bottom_navigation_bar/custom_bottom_navigation_bar_item.dart';
@@ -56,15 +60,15 @@ class TestScreenState extends State<TestScreen> {
       bottomNavigationBar: CustomBottomNavigationBar(
         items: [
           CustomBottomNavigationBarItem(
-            icon: Icons.map,
+            icon: Icon(Icons.map),
             title: "Map",
           ),
           CustomBottomNavigationBarItem(
-            icon: Icons.near_me,
+            icon: Icon(Icons.near_me),
             title: "Directions",
           ),
           CustomBottomNavigationBarItem(
-            icon: Icons.settings,
+            icon: Icon(Icons.settings),
             title: "Settings",
           ),
         ],
