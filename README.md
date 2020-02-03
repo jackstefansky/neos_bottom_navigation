@@ -1,4 +1,4 @@
-# Custom bottom navigation bar
+# Neos bottom bar
 
 A bottom navigation bar widget that is made to be customized 
 
@@ -10,17 +10,17 @@ A bottom navigation bar widget that is made to be customized
 	
 ~~~~
 Scaffold(
-      bottomNavigationBar: CustomBottomNavigationBar(
+      bottomNavigationBar: NeosBottomNavigation(
         items: [
-          CustomBottomNavigationBarItem(
+          NeosBottomNavigationItem(
             icon: Icons.map,
             title: "Map",
           ),
-          CustomBottomNavigationBarItem(
+          NeosBottomNavigationItem(
             icon: Icons.near_me,
             title: "Directions",
           ),
-          CustomBottomNavigationBarItem(
+          NeosBottomNavigationItem(
             icon: Icons.settings,
             title: "Settings",
           ),
@@ -37,6 +37,12 @@ onTap: (index) {
               curve: Curves.fastLinearToSlowEaseIn,
               duration: Duration(milliseconds: 600));
         },
+~~~~
+
+You can event set index by providing value to the widget:
+
+~~~~
+setIndex: yourValue,
 ~~~~
 
 Initial development sponsored by Zaynin Pty (Ltd)

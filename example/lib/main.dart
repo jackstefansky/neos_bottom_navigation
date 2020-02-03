@@ -2,14 +2,13 @@
 Initial development sponsored by Zaynin Pty (Ltd)
 */
 
-import 'package:custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
+import 'package:neos_bottom_navigation/neos_bottom_navigation.dart';
+import 'package:neos_bottom_navigation/neos_bottom_navigation_item.dart';
 import 'package:flutter/material.dart';
-import 'package:custom_bottom_navigation_bar/custom_bottom_navigation_bar_item.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,43 +30,60 @@ class TestScreen extends StatefulWidget {
 
 class TestScreenState extends State<TestScreen> {
   PageController _pageController = PageController();
+
+  //int _setIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        controller: _pageController,
+      body: Column(
         children: <Widget>[
-          Center(
-            child: Icon(
-              Icons.map,
-              color: Color(0XFF003051),
-            ),
+          /*RaisedButton(
+            onPressed: _changeIndexMinus,
+            child: Text("<"),
           ),
-          Center(
-            child: Icon(
-              Icons.near_me,
-              color: Color(0XFF003051),
+          RaisedButton(
+            onPressed: _changeIndexPlus,
+            child: Text(">"),
+          ),*/
+          Expanded(
+            child: PageView(
+              controller: _pageController,
+              children: <Widget>[
+                Center(
+                  child: Icon(
+                    Icons.map,
+                    color: Color(0XFF003051),
+                  ),
+                ),
+                Center(
+                  child: Icon(
+                    Icons.near_me,
+                    color: Color(0XFF003051),
+                  ),
+                ),
+                Center(
+                  child: Icon(
+                    Icons.shopping_cart,
+                    color: Color(0XFF003051),
+                  ),
+                ),
+              ],
             ),
-          ),
-          Center(
-            child: Icon(
-              Icons.shopping_cart,
-              color: Color(0XFF003051),
-            ),
-          ),
+          )
         ],
       ),
-      bottomNavigationBar: CustomBottomNavigationBar(
+      bottomNavigationBar: NeosBottomNavigation(
+        //setIndex: _setIndex,
         items: [
-          CustomBottomNavigationBarItem(
+          NeosBottomNavigationItem(
             icon: Icon(Icons.map),
             title: "Map",
           ),
-          CustomBottomNavigationBarItem(
+          NeosBottomNavigationItem(
             icon: Icon(Icons.near_me),
             title: "Directions",
           ),
-          CustomBottomNavigationBarItem(
+          NeosBottomNavigationItem(
             icon: Icon(Icons.settings),
             title: "Settings",
           ),
@@ -80,4 +96,18 @@ class TestScreenState extends State<TestScreen> {
       ),
     );
   }
+
+  /*
+  void _changeIndexPlus() {
+    setState(() {
+      _setIndex++;
+    });
+  }
+
+  void _changeIndexMinus() {
+    setState(() {
+      _setIndex--;
+    });
+  }
+  */
 }

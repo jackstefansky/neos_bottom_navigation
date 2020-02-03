@@ -5,4 +5,9 @@
 
 ## [0.0.2] - 2020-02-01
  
-* Changed required by CustomBottomNavigationBarItem's parameter item from IconData to Icon
+* Changed required by NeosBottomNavigationItem's parameter item from IconData to Icon
+
+
+## [0.0.2] - 2020-02-01
+ 
+* Changed package name

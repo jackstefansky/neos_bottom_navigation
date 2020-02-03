@@ -2,11 +2,11 @@
 Initial development sponsored by Zaynin Pty (Ltd)
 */
 
-import 'package:custom_bottom_navigation_bar/custom_bottom_navigation_bar_item.dart';
+import 'package:neos_bottom_navigation/neos_bottom_navigation_item.dart';
 import 'package:flutter/material.dart';
 
-class CustomBottomNavigationBarItemTile extends StatefulWidget {
-  CustomBottomNavigationBarItemTile(
+class NeosBottomNavigationItemTile extends StatefulWidget {
+  NeosBottomNavigationItemTile(
       this.item,
       this.selectedItemColor,
       this.unselectedItemColor,
@@ -17,7 +17,7 @@ class CustomBottomNavigationBarItemTile extends StatefulWidget {
       this.onChanged,
       this.currentIndex);
 
-  final CustomBottomNavigationBarItem item;
+  final NeosBottomNavigationItem item;
   final Color selectedItemColor;
   final Color unselectedItemColor;
   final Color itemOutlineColor;
@@ -29,12 +29,12 @@ class CustomBottomNavigationBarItemTile extends StatefulWidget {
 
   final int currentIndex;
   @override
-  _CustomBottomNavigationBarItemTileState createState() =>
-      _CustomBottomNavigationBarItemTileState();
+  _NeosBottomNavigationItemTileState createState() =>
+      _NeosBottomNavigationItemTileState();
 }
 
-class _CustomBottomNavigationBarItemTileState
-    extends State<CustomBottomNavigationBarItemTile> {
+class _NeosBottomNavigationItemTileState
+    extends State<NeosBottomNavigationItemTile> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -107,6 +107,6 @@ class _CustomBottomNavigationBarItemTileState
   }
 
   void selectItem() {
-    widget.onChanged(widget.index);
+    if (widget.onChanged != null) widget.onChanged(widget.index);
   }
 }

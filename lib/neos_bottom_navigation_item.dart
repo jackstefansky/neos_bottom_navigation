@@ -1,12 +1,12 @@
 /*
 Initial development sponsored by Zaynin Pty (Ltd)
 */
-
+library neos_bottom_navigation;
 
 import 'package:flutter/material.dart';
 
-class CustomBottomNavigationBarItem {
-  CustomBottomNavigationBarItem({
+class NeosBottomNavigationItem {
+  NeosBottomNavigationItem({
     @required this.icon,
     @required this.title,
     this.titleTextColor = const Color(0XFFFFFFFF),
