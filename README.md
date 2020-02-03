@@ -39,7 +39,7 @@ onTap: (index) {
         },
 ~~~~
 
-You can event set index by providing value to the widget:
+You can even set index by providing value to the widget:
 
 ~~~~
 setIndex: yourValue,

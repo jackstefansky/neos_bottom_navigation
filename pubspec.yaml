@@ -1,6 +1,6 @@
 name: neos_bottom_navigation
 description: A bottom navigation bar widget that is made to be customized
-version: 0.0.1
+version: 0.1.0
 author: Jack Stefansky<stefphan01@gmail.com>
 homepage: https://jackstefansky.github.io
 
