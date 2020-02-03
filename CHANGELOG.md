@@ -8,6 +8,6 @@
 * Changed required by NeosBottomNavigationItem's parameter item from IconData to Icon
 
 
-## [0.0.2] - 2020-02-01
+## [0.1.0] - 2020-02-01
  
 * Changed package name
