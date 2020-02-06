@@ -42,6 +42,7 @@ class _NeosBottomNavigationState extends State<NeosBottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.transparent,
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: <Widget>[

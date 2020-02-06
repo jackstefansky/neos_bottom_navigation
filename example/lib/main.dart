@@ -35,44 +35,33 @@ class TestScreenState extends State<TestScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Stack(
         children: <Widget>[
-          /*RaisedButton(
-            onPressed: _changeIndexMinus,
-            child: Text("<"),
-          ),
-          RaisedButton(
-            onPressed: _changeIndexPlus,
-            child: Text(">"),
-          ),*/
-          Expanded(
-            child: PageView(
-              controller: _pageController,
-              children: <Widget>[
-                Center(
-                  child: Icon(
-                    Icons.map,
-                    color: Color(0XFF003051),
-                  ),
-                ),
-                Center(
-                  child: Icon(
-                    Icons.near_me,
-                    color: Color(0XFF003051),
-                  ),
-                ),
-                Center(
-                  child: Icon(
-                    Icons.shopping_cart,
-                    color: Color(0XFF003051),
-                  ),
-                ),
-              ],
-            ),
-          )
+          _buildBody(),
+          _buildNavBar(),
         ],
       ),
-      bottomNavigationBar: NeosBottomNavigation(
+    );
+  }
+
+  Widget _buildBody() {
+    return SingleChildScrollView(
+      child: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+            colors: [Colors.red, Colors.green],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          )),
+          height: 1000.0,
+          width: double.infinity),
+    );
+  }
+
+  Widget _buildNavBar() {
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: NeosBottomNavigation(
         //setIndex: _setIndex,
         items: [
           NeosBottomNavigationItem(
@@ -80,7 +69,9 @@ class TestScreenState extends State<TestScreen> {
             title: "Map",
           ),
           NeosBottomNavigationItem(
-            icon: Icon(Icons.near_me),
+            icon: Icon(
+              Icons.near_me,
+            ),
             title: "Directions",
           ),
           NeosBottomNavigationItem(

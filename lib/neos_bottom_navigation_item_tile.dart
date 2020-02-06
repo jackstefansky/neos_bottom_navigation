@@ -48,12 +48,16 @@ class _NeosBottomNavigationItemTileState
   }
 
   Widget _buildItem() {
-    Icon icon;
+    Widget icon;
 
-    icon = Icon(widget.item.icon.icon,
-        color: widget.currentIndex == widget.index
-            ? widget.selectedItemColor
-            : widget.unselectedItemColor);
+    icon = Container(
+      padding: EdgeInsets.all(15.0),
+      child: Icon(widget.item.icon.icon,
+          size: widget.item.icon.size,
+          color: widget.currentIndex == widget.index
+              ? widget.selectedItemColor
+              : widget.unselectedItemColor),
+    );
 
     return Stack(
       children: <Widget>[
@@ -66,7 +70,7 @@ class _NeosBottomNavigationItemTileState
                 ? Alignment.topCenter
                 : Alignment.bottomCenter,
             child: AnimatedContainer(
-                padding: EdgeInsets.all(15.0),
+                //padding: EdgeInsets.all(15.0),
                 curve: Curves.easeOut,
                 duration: Duration(milliseconds: 300),
                 decoration: BoxDecoration(
